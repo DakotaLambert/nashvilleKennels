@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+// import { useHistory } from 'react-router-dom'
 import { AnimalContext } from "./AnimalProvider";
 import "./Animal.css";
 
@@ -13,16 +14,19 @@ export const AnimalList = () => {
   }, []);
 
   return (
-    <section className="animals">
-      {console.log("AnimalList: Render", animals)}
-      {animals.map((animal) => {
-        return (
-          <div className="animal" id={`animal--${animal.id}`} key={animal.id}>
-            <h3 className="animal__name">Name: {animal.name}</h3>
-            <div className="animal__breed">Breed: {animal.breed}</div>
-          </div>
-        );
-      })}
-    </section>
+    <>
+      <section className="animals">
+        {console.log("AnimalList: Render", animals)}
+        {animals.map((animal) => {
+          return (
+            <div className="animal" id={`animal--${animal.id}`} key={animal.id}>
+              <h3 className="animal__name">Name: {animal.name}</h3>
+              <div className="animal__breed">Breed: {animal.breed}</div>
+            </div>
+          );
+        })}
+      </section>
+    </>
   );
 };
+
