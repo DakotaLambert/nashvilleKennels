@@ -2,9 +2,11 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    border-bottom: 2px solid goldenrod;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    margin-bottom: 2rem;
 }

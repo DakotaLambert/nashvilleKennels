@@ -4,8 +4,10 @@ import { AnimalList } from "./animal/AnimalList"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { LocationList } from "./locations/LocationList"
 import { LocationProvider } from "./locations/LocationProvider"
-
-
+import { CustomerProvider } from "./customers/CustomerProvider";
+import { CustomerList } from "./customers/CustomerList";
+import { EmployeeList } from "./employees/EmployeeList";
+import { EmployeeProvider } from "./employees/EmployeeProvider";
 
 export const ApplicationViews = () => {
     return (
@@ -23,6 +25,24 @@ export const ApplicationViews = () => {
                     <AnimalList />
                 </Route>
             </AnimalProvider>
+
+            <LocationProvider>
+                <Route exact path="/locations">
+                    <LocationList />
+                </Route>
+            </LocationProvider>
+
+            <CustomerProvider>
+                <Route exact path="/customers">
+                    <CustomerList />
+                </Route>
+            </CustomerProvider>
+
+            <EmployeeProvider>
+                <Route exact path="/employees">
+                    <EmployeeList />
+                </Route>
+            </EmployeeProvider>
         </>
     )
 }
