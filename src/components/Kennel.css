@@ -32,3 +32,8 @@ strong {
 address {
   margin: 0 0 1.5em;
 }
+
+.kennelInfoHead {
+  text-align: center;
+  margin-bottom: 3rem;
+}
