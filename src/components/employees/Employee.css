@@ -10,3 +10,14 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+  .employeePageHeader {
+    text-align: center;
+  }
+  
+  .addEmployeeButton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  

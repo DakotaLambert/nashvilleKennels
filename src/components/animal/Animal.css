@@ -1,16 +1,23 @@
 .animals {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .animal {
-      flex-basis: 28%;
-      margin: 1em;
-      padding: 1em;
-      border: 1px solid goldenrod;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-  .animal__name {
-      
-  }
+.animal {
+  flex-basis: 28%;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid goldenrod;
+}
+
+.animalPageHeader {
+  text-align: center;
+}
+
+.addAnimalButton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
