@@ -7,7 +7,7 @@ export const LocationProvider = (props) => {
     const [locations, setLocations] = useState([])
 
     const getLocations = () => {
-        return fetch(`${API}/locations`)
+        return fetch(`${API}/locations?_embed=employees&_embed=animals`)
         .then(res => res.json())
         .then(setLocations)
     }

@@ -10,3 +10,9 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+  .locationInfoHeader {
+    border-bottom: 2px solid goldenrod;
+    max-width: 190px;
+    text-align: center;
+  }
