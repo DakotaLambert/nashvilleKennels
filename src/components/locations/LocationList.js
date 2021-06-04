@@ -6,11 +6,11 @@ import "./Location.css";
 export const LocationList = () => {
   // This state changes when `getLocations()` is invoked below
   const { locations, getLocations } = useContext(LocationContext);
-  const 
+  
 
   //useEffect - reach out to the world for something
   useEffect(() => {
-    console.log("LocationList: useEffect - getLocations");
+    
     getLocations();
   }, []);
 
@@ -23,7 +23,6 @@ export const LocationList = () => {
           <Link to={`/locations/detail/${location.id}`} className="location"  key={location.id}>
             <h3 className="location__name">Name: {location.name}</h3>
           </Link>
-          {employees.length}
           </>
         );
       })}
