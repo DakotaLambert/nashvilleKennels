@@ -13,7 +13,6 @@ export const AnimalList = () => {
 
   //useEffect - reach out to the world for something
   useEffect(() => {
-    console.log("AnimalList: useEffect - getAnimals");
     getAnimals();
   }, []);
 
@@ -21,7 +20,7 @@ export const AnimalList = () => {
     <>
       <h2 className="animalPageHeader">Animals</h2>
       <div className="addAnimalButton">
-        <button onClick={() => history.push("/animals/create")}>
+        <button onClick={() => history.pop("/animals/create")}>
           Add Animal
         </button>
       </div>
@@ -29,7 +28,7 @@ export const AnimalList = () => {
         {animals.map((animal) => {
           return (
             <Link
-              to={`/animal/detail/${animal.id}`}
+              to={`/animals/detail/${animal.id}`}
               key={animal.id}
               className="animal"
             >
@@ -41,3 +40,5 @@ export const AnimalList = () => {
     </>
   );
 };
+
+// ? what actually happens with useHistory, and why history.push(path) works

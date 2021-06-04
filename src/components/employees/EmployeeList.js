@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { EmployeeContext } from "./EmployeeProvider";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Employee.css";
 
 export const EmployeeList = () => {
@@ -24,16 +25,14 @@ export const EmployeeList = () => {
 
         {employees.map((employee) => {
           return (
-            <div
+            <Link to={`/employees/details/${employee.id}`}
               className="employee"
               id={`employee--${employee.id}`}
               key={employee.id}
             >
               <h3 className="employeeName">Name: {employee.name}</h3>
-              <div className="employeeAddress">
-                Address: {employee.location.address}
-              </div>
-            </div>
+              
+            </Link>
           );
         })}
       </section>
