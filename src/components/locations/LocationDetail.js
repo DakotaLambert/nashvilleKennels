@@ -36,7 +36,12 @@ export const LocationDetail = () => {
         ))}
       </div>
       
-      <h3 className="employee__location">Animals {locations.name}</h3>
+      <h3 className="employee__location" key={location.animals.id}>Animals</h3>
+        {location.animals.map((animalProp) => {
+          <div key={location.animals.id}>{animalProp.name}</div>
+        })}
+    
+
     </section>
   );
 };

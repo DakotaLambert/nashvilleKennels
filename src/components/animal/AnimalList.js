@@ -16,11 +16,15 @@ export const AnimalList = () => {
     getAnimals();
   }, []);
 
+  useEffect(()=> {
+    console.log(animals)
+  }, [animals])
+
   return (
     <>
       <h2 className="animalPageHeader">Animals</h2>
       <div className="addAnimalButton">
-        <button onClick={() => history.pop("/animals/create")}>
+        <button onClick={() => history.push("/animals/create")}>
           Add Animal
         </button>
       </div>
@@ -41,4 +45,3 @@ export const AnimalList = () => {
   );
 };
 
-// ? what actually happens with useHistory, and why history.push(path) works

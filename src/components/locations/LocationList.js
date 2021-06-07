@@ -21,7 +21,9 @@ export const LocationList = () => {
         return (
           <>
           <Link to={`/locations/detail/${location.id}`} className="location"  key={location.id}>
-            <h3 className="location__name">Name: {location.name}</h3>
+            <h3 className="location__name">{location.name}</h3>
+            <div className="location__name" key={location.employees.id}>{location.employees.length} Employees</div>
+            <div className="location__name" key={location.animals.id}>{location.animals.length} Animals</div>
           </Link>
           </>
         );
