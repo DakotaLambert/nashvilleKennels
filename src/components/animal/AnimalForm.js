@@ -29,6 +29,7 @@ export const AnimalForm = () => {
   Reach out to the world and get customers state
   and locations state on initialization.
   */
+ 
   useEffect(() => {
     getCustomers().then(getLocations);
   }, []);

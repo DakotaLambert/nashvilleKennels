@@ -18,20 +18,20 @@ export const ApplicationViews = () => {
   return (
     <>
       {/* Render the location list when http://localhost:3000/ */}
-
-        <EmployeeProvider>
-      <LocationProvider>
-        <Route exact path="/">
-          <LocationList />
-        </Route>
+    
+      <EmployeeProvider>
+        <LocationProvider>
+          <Route exact path="/">
+            <LocationList />
+          </Route>
           <AnimalProvider>
             <Route exact path="/locations/detail/:locationId(\d+)">
               <LocationDetail />
             </Route>{" "}
           </AnimalProvider>
-      </LocationProvider>
-        </EmployeeProvider>
-
+        </LocationProvider>
+      </EmployeeProvider>
+  
       {/* Render the animal list when http://localhost:3000/animals */}
 
       <AnimalProvider>
