@@ -24,6 +24,7 @@ export const AnimalProvider = (props) => {
         .then(getAnimals)
     }
 
+    
     const releaseAnimal = animalId => {
         return fetch(`http://localhost:8088/animals/${animalId}`, {
             method: "DELETE"
