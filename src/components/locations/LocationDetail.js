@@ -1,11 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { LocationContext } from "./LocationProvider";
 import "./Location.css";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 export const LocationDetail = () => {
   const { locations } = useContext(LocationContext);
-  
+
+
+  const history = useHistory()
+
   const [location, setLocation] = useState({
     employees: [],
     animals: [],
@@ -30,18 +33,25 @@ export const LocationDetail = () => {
       <h2 className="locationInfoHeader">{location.name}</h2>
       <h3 className="employee__name">Employees </h3>
       <div className="employee__location">
-
         {location.employees.map((employeeProp) => (
           <div key={employeeProp.id}>{employeeProp.name}</div>
         ))}
       </div>
-      
-      <h3 className="employee__location" key={location.animals.id}>Animals</h3>
-        {location.animals.map((animalProp) => {
-          <div key={location.animals.id}>{animalProp.name}</div>
-        })}
-    
 
+      <h3 className="employee__location" key={location.animals.id}>
+        Animals
+      </h3>
+      {location.animals.map((animalProp) => {
+        <div key={location.animals.id}>{animalProp.name}</div>;
+      })}
+      <button
+        key="editButton"
+        onClick={() => {
+          history.push(`/locations/edit/${location.id}`);
+        }}
+      >
+        Edit
+      </button>
     </section>
   );
 };
