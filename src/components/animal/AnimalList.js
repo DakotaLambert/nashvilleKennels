@@ -16,10 +16,6 @@ export const AnimalList = () => {
     getAnimals();
   }, []);
 
-  useEffect(()=> {
-    console.log(animals)
-  }, [animals])
-
   return (
     <>
       <h2 className="animalPageHeader">Animals</h2>
