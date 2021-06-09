@@ -6,8 +6,7 @@ import { useHistory, useParams } from "react-router-dom";
 export const LocationDetail = () => {
   const { locations } = useContext(LocationContext);
 
-
-  const history = useHistory()
+  const history = useHistory();
 
   const [location, setLocation] = useState({
     employees: [],
@@ -25,33 +24,26 @@ export const LocationDetail = () => {
     const thisLocation = locations.find(
       (a) => a.id === parseInt(locationId)
     ) || { location: {} };
-
+console.log("render selected location", thisLocation)
     setLocation(thisLocation);
   }, [locationId]);
+
   return (
     <section className="employee">
       <h2 className="locationInfoHeader">{location.name}</h2>
       <h3 className="employee__name">Employees </h3>
-      <div className="employee__location">
-        {location.employees.map((employeeProp) => (
-          <div key={employeeProp.id}>{employeeProp.name}</div>
-        ))}
-      </div>
 
+      {location.employees.map((employeeProp) => 
+        <div key={employeeProp.id}>{employeeProp.name}</div>
+      )}
       <h3 className="employee__location" key={location.animals.id}>
         Animals
       </h3>
-      {location.animals.map((animalProp) => {
-        <div key={location.animals.id}>{animalProp.name}</div>;
-      })}
-      <button
-        key="editButton"
-        onClick={() => {
-          history.push(`/locations/edit/${location.id}`);
-        }}
-      >
-        Edit
-      </button>
+
+      {location.animals.map((animalProp) => 
+         <div key={animalProp.id}>{animalProp.name}</div>
+      )}
+      
     </section>
   );
 };

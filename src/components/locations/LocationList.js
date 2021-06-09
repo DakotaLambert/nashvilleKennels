@@ -10,11 +10,13 @@ export const LocationList = () => {
 
   //useEffect - reach out to the world for something
   useEffect(() => {
+    console.log(locations)
     getLocations();
+    
   }, []);
 
   return (
-    <section className="locations">
+    <section className="locations" key={locations.id}>
       {console.log("LocationList: Render", locations)}
       {locations.map((location) => {
         return (
